@@ -64,7 +64,6 @@ section {
 }
 
 .nav_items.active .title {
-  transform: translateY(15px);
   opacity: 1;
 }
 
