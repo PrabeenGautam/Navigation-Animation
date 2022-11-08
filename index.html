@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <ul class="nav_links">
+          <li class="nav_items active">
+            <a href="#" class="nav_link">
+              <ion-icon class="icons" name="home-outline"></ion-icon>
+              <span class="title">Home</span>
+            </a>
+          </li>
+          <li class="nav_items">
+            <a href="#" class="nav_link">
+              <ion-icon class="icons" name="person-outline"></ion-icon>
+              <span class="title">Profile</span>
+            </a>
+          </li>
+          <li class="nav_items">
+            <a href="#" class="nav_link">
+              <ion-icon class="icons" name="chatbubble-outline"></ion-icon>
+              <span class="title">Message</span>
+            </a>
+          </li>
+          <li class="nav_items">
+            <a href="#" class="nav_link">
+              <ion-icon class="icons" name="camera-outline"></ion-icon>
+              <span class="title">Photo</span>
+            </a>
+          </li>
+          <li class="nav_items">
+            <a href="#" class="nav_link">
+              <ion-icon class="icons" name="settings-outline"></ion-icon>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </nav>
+    </section>
+  </body>
+  <script>
+    const navLinks = document.querySelector(".nav_links");
+    const navLink = document.querySelectorAll(".nav_items");
+
+    navLinks.addEventListener("click", function (e) {
+      const data = e.target.closest(".nav_items");
+      if (!data) return;
+      navLink.forEach((link) => link.classList.remove("active"));
+      data.classList.add("active");
+    });
+  </script>
+</html>
